@@ -48,7 +48,7 @@ id int not null primary key auto_increment,
 
 ### Travel欄位說明
 目前將爬完的資料儲存在 Travel表當中
-
+- id : Primary key auto increment
 - name : 旅遊產品名稱
 - code : 旅遊產品的行程號
 - start_date : 旅遊團起始日期
