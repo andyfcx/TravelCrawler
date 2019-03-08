@@ -1,7 +1,7 @@
 # TravelCrawler
 
 ### 資料庫設計
-需要建立搜尋的key有網站左側的篩選內容，
+需要建立能夠搜尋的key有網站左側的篩選內容，
 例如：出發日期、目的地分類、價格、天數、出發機場、行程特色、景點特色、季節性、會員獨享、旅行社優惠、主要航班、旅遊型態、航班總結、航班去程、出發星期、車程偏好、指定景點。
 
 - 其中，出發日期、價格、天數、出發機場、去程、出發星期，已經在Travel表中建好
@@ -10,7 +10,7 @@
 
 - 目的地分類：需要欄位有id、地區、國家名稱、區域名稱（省、州、等）
 
-- 使用者評價需要另外建一個表，該表的評價平均之後作為一個FK關聯
+- 使用者評價，需要另外建一個表，該表的評價平均之後作為一個FK關聯
 ```
 CREATE TABLE UserFeedback (
     ID int NOT NULL PRIMARY KEY auto_increment,
@@ -32,6 +32,8 @@ CREATE TABLE UserFeedback (
 create table agent(
 id int not null primary key auto_increment,
 `name` varchar(255),
+`company_name` varchar(255),
+`website` varchar(255),
 `address` varchar(255),
 `tel` varchar(255),
 `fax` varchar(255),
