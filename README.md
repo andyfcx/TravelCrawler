@@ -5,9 +5,38 @@
 例如：出發日期、目的地分類、價格、天數、出發機場、行程特色、景點特色、季節性、會員獨享、旅行社優惠、主要航班、旅遊型態、航班總結、航班去程、出發星期、車程偏好、指定景點。
 
 ##### 額外的表：
-- 使用者評價需要另外建一個表，該表的評價平均之後作為一個FK關聯 
--- 欄位 Username, 
-- 航班也需要另外建立一個表，以FK做關連式查詢
+- 使用者評價需要另外建一個表，該表的評價平均之後作為一個FK關聯
+```
+CREATE TABLE UserFeedback (
+    ID int NOT NULL PRIMARY KEY auto_increment,
+    `uid` varchar(255) NOT NULL references user(id),
+    `agent` varchar(255) references agent(id),
+    `product_purchased` int not null references Travel(ID),
+    `date` datetime,
+	  `travel_arrangement_score` int, 
+    `guide_service_score` int,
+    `eating_arrangement_score` int,
+    `housing_arrangement_score` int ,
+    `transportation_score` int,
+    `star` int,
+    `comment` text(255)
+);
+```
+- 旅行社的資料
+```
+create table agent(
+id int not null primary key auto_increment,
+`name` varchar(255),
+`address` varchar(255),
+`tel` varchar(255),
+`fax` varchar(255),
+`email` varchar(255),
+`representative` varchar(255)
+);
+```
+
+- 航班也需要另外建立一個表，以FK做關連式查詢，本次只有將航班爬取下來
+
 - 促銷贈品
 
 
