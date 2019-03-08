@@ -61,4 +61,4 @@ id int not null primary key auto_increment,
 - price : 價錢
 - comment : 旅行社附註
 - flight : 此行程中的飛行航班
-- source_site : 爬自旅行社網站
+- source_site : 爬自旅行社網站（應使用FK關聯至agent表）
