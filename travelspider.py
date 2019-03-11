@@ -74,7 +74,7 @@ class TravelSpider():
                                      cookies=cookies,
                                      data=data)
             res = response.json()
-            self.source_site = res['SiteTitle']
+
             self.json_data = res['All']
             self.parse()
 
